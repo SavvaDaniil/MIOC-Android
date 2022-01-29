@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CourseFragment"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:weightSum="10"
+            >
+            <TableRow>
+                <ImageButton
+                    android:id="@+id/btnFilter"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:gravity="left"
+                    android:src="@drawable/ic_filter"
+                    android:padding="12dp"
+                    android:tint="@color/colorWhite"
+                    />
+
+                <TextView
+                    android:layout_weight="8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/headerSize"
+                    android:layout_marginTop="8dp"
+                    android:text="Курсы"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnRefresh"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:src="@drawable/ic_refresh"
+                    android:padding="12dp"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/coursesLoading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Идет загрузка..."
+            android:layout_marginTop="150dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/coursesError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ошибка сети"
+            android:textSize="20sp"
+            android:layout_marginTop="150dp"
+            />
+        <Button
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обновить"
+            android:textAllCaps="false"
+            android:textColor="@color/colorBlack"
+            android:backgroundTint="@color/colorOrange"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/coursesContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <ListView
+            android:id="@+id/listCourses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            >
+
+        </ListView>
+
+
+    </LinearLayout>
+
+</LinearLayout>

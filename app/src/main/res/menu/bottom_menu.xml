@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuAudition"
+        android:title="Онлайн-аудитория"
+        android:icon="@drawable/ic_home_black_24dp" />
+    <item
+        android:id="@+id/menuChat"
+        android:title="Чат"
+        android:icon="@drawable/ic_menu_chat" />
+    <item
+        android:id="@+id/menuStudy"
+        android:title="Мои курсы"
+        android:icon="@drawable/ic_menu_study" />
+    <item
+        android:id="@+id/menuCourse"
+        android:title="Курсы"
+        android:icon="@drawable/ic_menu_course" />
+    <item
+        android:id="@+id/menuProfile"
+        android:title="Профиль"
+        android:icon="@drawable/ic_menu_profile" />
+</menu>

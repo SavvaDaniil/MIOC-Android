@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment"
+    android:background="@color/colorWhite">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:weightSum="10"
+            >
+            <TableRow>
+
+                <ImageButton
+                    android:id="@+id/btnRefresh"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:src="@drawable/ic_refresh"
+                    android:padding="12dp"
+                    />
+
+                <TextView
+                    android:layout_weight="8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/headerSize"
+                    android:layout_marginTop="8dp"
+                    android:text="Профиль"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnExit"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:src="@drawable/ic_exit"
+                    android:padding="12dp"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/profileLoading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Идет загрузка..."
+                android:layout_marginTop="150dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profileError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Ошибка сети"
+                android:textSize="20sp"
+                android:layout_marginTop="150dp"
+                />
+            <Button
+                android:id="@+id/btnTryAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Обновить"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlack"
+                android:backgroundTint="@color/colorOrange"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profileContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="15dp"
+
+                android:src="@drawable/profile_nophoto"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginRight="-40dp"
+                android:src="@drawable/icon_pencil"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/labelFI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorOrange"
+                android:textSize="20sp"
+                android:text="---"
+
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:background="@color/lightGrey"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileStaticsMargin"
+                    android:layout_marginBottom="@dimen/profileStaticsMargin"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="@dimen/profileStaticsHeaderTextSize"
+                        android:textColor="@color/colorOrange"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="@dimen/profileStaticsDescTextWidth"
+                        android:layout_height="wrap_content"
+                        android:text="вебинаров посещено"
+                        android:textSize="@dimen/profileStaticsDescTextSize"
+                        android:gravity="center_horizontal"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileStaticsMargin"
+                    android:layout_marginBottom="@dimen/profileStaticsMargin"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="@dimen/profileStaticsHeaderTextSize"
+                        android:textColor="@color/colorOrange"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="@dimen/profileStaticsDescTextWidth"
+                        android:layout_height="wrap_content"
+                        android:text="тестов пройдено"
+                        android:textSize="@dimen/profileStaticsDescTextSize"
+                        android:gravity="center_horizontal"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileStaticsMargin"
+                    android:layout_marginBottom="@dimen/profileStaticsMargin"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="@dimen/profileStaticsHeaderTextSize"
+                        android:textColor="@color/colorOrange"
+                        android:textStyle="bold"
+                        />
+                    <TextView
+                        android:layout_width="@dimen/profileStaticsDescTextWidth"
+                        android:layout_height="wrap_content"
+                        android:text="видеолекций просмотрено"
+                        android:textSize="@dimen/profileStaticsDescTextSize"
+                        android:gravity="center_horizontal"
+                        />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileDataRowMarginTop"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:text="Фамилия:"
+                        />
+                    <EditText
+                        android:id="@+id/inputSecondname"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:inputType="text"
+                        android:background="@drawable/input_background_auth"
+                        android:layout_marginLeft="6dp"
+                        android:padding="4dp"
+                        android:maxLength="255"
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileDataRowMarginTop"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:text="Имя:"
+                        />
+                    <EditText
+                        android:id="@+id/inputFirstname"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:inputType="text"
+                        android:background="@drawable/input_background_auth"
+                        android:layout_marginLeft="6dp"
+                        android:padding="4dp"
+                        android:maxLength="255"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileDataRowMarginTop"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:text="Логин:"
+                        />
+                    <EditText
+                        android:id="@+id/inputUsername"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:inputType="text"
+                        android:background="@drawable/input_background_auth"
+                        android:layout_marginLeft="6dp"
+                        android:padding="4dp"
+                        android:maxLength="255"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileDataRowMarginTop"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:text="Текущий пароль:"
+                        />
+                    <EditText
+                        android:id="@+id/inputPasswordCurrent"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:inputType="textPassword"
+                        android:background="@drawable/input_background_auth"
+                        android:layout_marginLeft="6dp"
+                        android:padding="4dp"
+                        android:maxLength="255"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileDataRowMarginTop"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:text="Новый пароль:"
+                        />
+                    <EditText
+                        android:id="@+id/inputPasswordNew"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/profileDataLabelTextSize"
+                        android:inputType="textPassword"
+                        android:background="@drawable/input_background_auth"
+                        android:layout_marginLeft="6dp"
+                        android:padding="4dp"
+                        android:maxLength="255"
+                        />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profileDataRowMarginTop"
+                    android:orientation="horizontal"
+                    >
+                    <Button
+                        android:id="@+id/btnSave"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="right"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/colorOrange"
+                        android:textColor="@color/colorWhite"
+                        android:layout_span="2"
+                        android:text="Сохранить"
+                        />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

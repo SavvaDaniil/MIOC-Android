@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="headerSize">20sp</dimen>
+    <dimen name="headerMarginTop">15dp</dimen>
+
+    <!-- Profile Blocks -->
+    <dimen name="profileStaticsMargin">8dp</dimen>
+    <dimen name="profileStaticsHeaderTextSize">20sp</dimen>
+    <dimen name="profileStaticsDescTextSize">12sp</dimen>
+    <dimen name="profileStaticsDescTextWidth">80dp</dimen>
+
+    <dimen name="profileDataRowMarginTop">12dp</dimen>
+    <dimen name="profileDataMarginLeft">50dp</dimen>
+    <dimen name="profileDataLabelTextSize">14sp</dimen>
+</resources>

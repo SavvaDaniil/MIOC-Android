@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ViewModel.AuthenticationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:src="@drawable/logoauth" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Аутентификация"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp">
+
+                <Button
+                    android:id="@+id/btnLoginForm"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="-4dp"
+                    android:backgroundTint="@color/colorOrange"
+
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+
+                    android:text="Войти"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10dp" />
+
+                <Button
+                    android:id="@+id/btnRegistrationForm"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4dp"
+                    android:backgroundTint="@color/colorNotActive"
+                    android:textColor="@color/colorBlack"
+                    android:text="Регистрация"
+                    android:textAllCaps="false"
+                    android:textSize="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <EditText
+                android:id="@+id/loginFormUsername"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_background_auth"
+                android:hint="Логин"
+                android:inputType="text"
+                android:maxLength="128"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/loginFormPassword"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_background_auth"
+                android:hint="Пароль"
+                android:inputType="textPassword"
+                android:maxLength="128"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/colorOrange"
+                android:text="Вход"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="14dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <EditText
+                android:id="@+id/registrationFormFirstname"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_background_auth"
+                android:hint="Имя"
+                android:inputType="text"
+                android:maxLength="128"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/registrationFormSecondname"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_background_auth"
+                android:hint="Фамилия"
+                android:inputType="text"
+                android:maxLength="128"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/registrationFormUsername"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_background_auth"
+                android:hint="Электронная почта"
+                android:inputType="textEmailAddress"
+                android:maxLength="128"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/registrationFormPassword"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_background_auth"
+                android:hint="Пароль"
+                android:inputType="textPassword"
+                android:maxLength="128"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/registrationFormPasswordAgain"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/input_background_auth"
+                android:hint="Пароль еще раз"
+                android:inputType="textPassword"
+                android:maxLength="128"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/btnRegistration"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/colorOrange"
+                android:text="Зарегистрироваться"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="14dp"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
